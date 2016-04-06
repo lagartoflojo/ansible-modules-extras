@@ -181,7 +181,7 @@ def package_present(m, name, installed_state, package_type, disable_gpg_check, d
         # add global options before zypper command
         if disable_gpg_check:
             cmd.append('--no-gpg-checks')
-        cmd.extend(['install', '--auto-agree-with-licenses', '-t', package_type])
+        cmd.extend(['install', '--oldpackage', '--auto-agree-with-licenses', '-t', package_type])
         # add install parameter
         if disable_recommends and not old_zypper:
             cmd.append('--no-recommends')
